@@ -1,0 +1,1 @@
+rule dog.jpg dog_thumbnail.png {exec convert $input -resize 300 $output}

@@ -1,0 +1,8 @@
+proc compile {input output {flags ""}} {
+  set CC cc
+  set CFLAGS "-Wall -O3"
+  exec $CC {*}$CFLAGS {*}$flags $input -o $output
+}
+
+rule hello.c hello.o {compile $input $output -c}
+rule hello.o hello {compile $input $output}
